@@ -1,0 +1,11 @@
+<div class="all-recipe-wrapper">
+  <h2>Recipe List</h2>
+  <div class="all-recipe-list-below" *ngIf="recipeList.length>0">
+    <div *ngFor="let list of recipeList; let i = index" class="each-recipe-wrapper">
+      <div class="title" data-toggle="tooltip" data-placement="top" [title]="list.title">{{list.title | limitTo : 25}}</div>
+      <div class="image" *ngIf="list.image"><img [src]="list.image"></div>
+      <div class="no-image" *ngIf="!list.image">Image Not Available</div>
+      <button type="button" class="btn btn-primary" (click)="redirectTo(list.id)">Get Dish Recipe</button>
+    </div>
+  </div>
+</div>

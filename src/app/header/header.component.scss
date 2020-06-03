@@ -1,0 +1,40 @@
+
+.brand{
+    font-family: 'Segoe Script';
+}
+.search-box{
+    width: 60%;
+    position: relative;
+    input{
+        width: 86%;
+        margin-left: 3%;
+    }
+    .autosuggestion{
+        border-radius: 0 0 2px 2px;
+        border-top: 1px solid #e0e0e0;
+        position: absolute;
+        background-color: #fff;
+        color: #000;
+        z-index: 9;
+        top: 37px;
+        width: 86%;
+        left: 25px;
+        box-shadow: 2px 3px 5px -1px rgba(0,0,0,.5);
+        white-space: nowrap;
+        padding: 10px 0px 20px;
+        max-height: 200px;
+        cursor: pointer;        
+        .list{
+            padding: 10px 30px;
+            list-style-type: none;
+            &:hover{
+                background: #efefef;
+            }
+        }
+    }
+
+}
+.nav-link{
+    font-family: 'IBM Plex Sans', sans-serif !important;
+}
+   

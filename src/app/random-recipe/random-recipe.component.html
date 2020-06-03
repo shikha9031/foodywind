@@ -1,0 +1,32 @@
+<div class="random-recipe-container container">
+  <div id="carouselExampleControls" class="carousel slide" data-ride="carousel" data-interval="false">
+    <div class="carousel-inner">
+      <div class="carousel-item item-wrapper" [class.active]="id == list.id" *ngFor="let list of foodArray; let i = index">
+        <div class="title">{{list.title}}</div>
+        <div [innerHTML]="list.summary" class="summary"></div>
+        <div class="img-container"><img class="d-block w-100" [src]="list.image" alt="First slide"></div>
+        <div class="ingredients">
+          <div class="header">Ingredients</div>
+          <ng-container *ngIf="list.extendedIngredients && list.extendedIngredients.length>0">
+            <div class="item"  *ngFor="let each of list.extendedIngredients; let j = index"> 
+             <span class="index">{{j+1}}.</span>
+             <span class="ingredients-list">{{each.originalString}}</span>
+            </div>
+          </ng-container>
+          <div class="instruction">
+            <div class="header">Directions</div>
+            <ng-container *ngIf="list.analyzedInstructions.length>0">
+              <div class="item" *ngFor="let each of list.analyzedInstructions[0].steps">
+                <span class="index">Step {{each.number}}:</span>
+                <span  class="ingredients-list">{{each.step}}</span>
+              </div>
+            </ng-container>
+          </div>
+        </div>
+        <div class="know-more"><a [href]="list.sourceUrl" target="_blank">Know More About This Food</a></div>
+        <div><a class="next" (click)="nextItem()">Next &raquo;</a></div>
+      </div>  
+    </div>
+   
+  </div>
+</div>

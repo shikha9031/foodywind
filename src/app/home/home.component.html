@@ -1,0 +1,30 @@
+<div class="home-container">
+    <div class="carousel slide slider-width" data-ride="carousel">
+        <div class="carousel-inner carousel-wrapper">
+            <div class="carousel-item img-container" (click)="redirectTo(list.sourceUrl)" [class.active]="i == 0" *ngFor="let list of foodData;let i = index">
+                <img class="d-block w-100 img-width" [src]="baseUri+list.image" alt="First slide">
+                <div class="carousel-caption recipe-title d-none d-md-block">
+                        <div class="title">{{list.title}}</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- ALL foods display here -->
+
+    <div class="all-recipe-wrapper">
+        <h2>Yummy Recipe Below!! Try today</h2>
+        <div class="all-recipe-list-below">
+                <div *ngFor = "let list of randomRecipe; let i = index" class="each-recipe-wrapper">
+                    <div class="title"  data-toggle="tooltip" data-placement="top" [title]="list.title">{{list.title  | limitTo : 25}}</div>
+                    <div class="summary-container">
+                    <div class="summary" [innerHTML]="list.summary | limitTo : 200"></div>
+                    <a class="read-more" (click)="readMorePageNavigate(list.id)">Read More</a>
+                    </div>
+                    <div class="image" *ngIf="list.image"><img [src]="list.image"></div>
+                    <div class="no-image" *ngIf="!list.image">Image Not Available</div>
+                    <button type="button" class="btn btn-primary" (click)="redirectTo(list.sourceUrl)">Get Dish Recipe</button>                    
+                </div>
+        </div>
+    </div>
+</div>
