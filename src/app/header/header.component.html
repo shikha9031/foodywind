@@ -12,18 +12,27 @@
       <li class="nav-item">
         <a class="nav-link" routerLink="random-recipe">Random Recipe</a>
       </li>
-      <li class="nav-item">
+      <!-- <li class="nav-item">
         <a class="nav-link disabled" href="#">Disabled</a>
-      </li>
+      </li> -->
     </ul>
     <form class="form-inline my-2 my-lg-0 search-box" #searchForm="ngForm" (ngSubmit)="submitSearchKeyword()">
-      <input class="form-control mr-sm-2" type="search" [(ngModel)]="keyword" name="keywords" required placeholder="Suggestion: onion,garlic"
+      <div class="dropdown">
+        <button type="button" class="btn btn-primary dropdown-toggle btn-color" data-toggle="dropdown">
+          {{searchType}}
+        </button>
+        <div class="dropdown-menu">
+          <a class="dropdown-item" (click)="searchType = 'Food Name';suggestion ='Suggestion: puloa'; keyword = '' ">Search By Food Name</a>
+          <a class="dropdown-item" (click)="searchType = 'Ingredients';suggestion ='Suggestion: onion,garlic'; keyword = ''">Search By Ingredients</a>
+        </div>
+      </div>
+      <input class="form-control mr-sm-2" type="search" (keyup)="autosuggestionFun()" [(ngModel)]="keyword" name="keywords" required [placeholder]="suggestion"
         aria-label="Search" autocomplete="off">
-      <button class="btn btn-outline-light my-2 my-sm-0" type="submit" [disabled]="!searchForm.valid">Search</button>
+      <button class="btn btn-outline-light search-btn my-2 my-sm-0" type="submit" [disabled]="!searchForm.valid">Search</button>
       <!-- auto suggestion dropdown -->
-      <!-- <ul class="ps autosuggestion" *ngIf="autoSuggestionObj.length>0 && keyword !=''"  [perfectScrollbar]="config">
-        <li *ngFor="let list of autoSuggestionObj" class="list" (click)="readMorePageNavigate(list.title)">{{list.title}}</li>
-      </ul> -->
+      <ul class="ps autosuggestion" *ngIf="autoSuggestionObj.length>0 && keyword !='' && opensuggestionBox && searchType === 'Food Name'"  [perfectScrollbar]="config">
+        <li *ngFor="let list of autoSuggestionObj" class="list" (click)="readMorePageNavigate(list.id)">{{list.title}}</li>
+      </ul>
     </form>
   </div>
 </nav>

@@ -56,7 +56,7 @@ export class CookingService {
       headers: new HttpHeaders({
         'Content-Type': 'application/json'
       }),
-      params: { 'apiKey':'a1ebedbdd79346e7b600f9382f080bc4', 'number':'10', 'query':param }
+      params: { 'apiKey':'a1ebedbdd79346e7b600f9382f080bc4', 'number':'20', 'query':param }
     }
     return this._httpClient.get<any>('https://api.spoonacular.com/recipes/autocomplete', httpOptionsForRecipe);    
   }

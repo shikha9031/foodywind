@@ -1,8 +1,12 @@
 .random-recipe-container{
     background-color:#f8f9fd;
     margin-top:40px; 
+    margin-bottom: 50px;    
     .item-wrapper{
         padding: 50px;
+        @media(max-width:768px){
+            padding: 50px 15px;
+        }
         .title{
             font-weight: 900;
             font-size: 45px;

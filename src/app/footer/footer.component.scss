@@ -1,0 +1,19 @@
+.footer-container{
+    padding: 10px 70px;
+    background: #007bff;
+    .copywrite, .contact-us{
+        color: white;
+    }
+    .copywrite{
+        display: inline-block;        
+    }
+    .contact-us{
+        float: right;
+    }
+    @media(max-width:768px){
+        padding: 15px 50px;
+        .contact-us{
+            float: none;
+        }
+    }
+}

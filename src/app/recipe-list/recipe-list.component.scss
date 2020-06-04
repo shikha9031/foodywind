@@ -20,6 +20,11 @@
             &:nth-child(2n-1){
                 margin-right: 6%;
             }
+            @media(max-width:768px){
+                margin-right: 0;
+                width: 100%;
+                padding: 70px 50px;
+            }
             .title{
                 margin-bottom: 1.7rem;
                 line-height: 1.4;

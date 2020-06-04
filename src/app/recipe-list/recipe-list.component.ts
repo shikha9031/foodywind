@@ -43,6 +43,5 @@ export class RecipeListComponent implements OnInit {
   redirectTo(param){
     this._store.dispatch(new readMoreRef.ReadMoreAction(param));
     this._route.navigate(['/read-more']);
-
   }
 }

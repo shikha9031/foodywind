@@ -10,7 +10,7 @@ import * as randomRecipeRef from '../store/action/random.action';
   styleUrls: ['./home.component.scss']
 })
 export class HomeComponent implements OnInit {
-  randomRecipe: any;
+  randomRecipe: any = [];
   baseUri: any;
   items:string;
   foodData:any = [];

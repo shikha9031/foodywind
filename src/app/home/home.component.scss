@@ -34,6 +34,9 @@
             font-size: 45px;
             text-align: center;
             font-family: 'IBM Plex Sans', sans-serif !important;
+            @media(max-width:1200px){
+                line-height: 50px;
+            }
         }
         .all-recipe-list-below{
             margin-top: 50px;
@@ -47,6 +50,11 @@
                 vertical-align: top;
                 &:nth-child(2n-1){
                     margin-right: 6%;
+                }
+                @media(max-width:768px){
+                    margin-right: 0;
+                    width: 100%;
+                    padding: 70px 50px;
                 }
                 .title{
                     margin-bottom: 1.7rem;
@@ -80,6 +88,12 @@
                 .no-image{
                     height: 278px;
                     border: 1px solid;
+                    margin-bottom: 2rem;
+                    text-align: center;
+                    padding: 20px;
+                    font-size: 20px;
+                    font-weight: 600;
+                    
                 }
             }
         }

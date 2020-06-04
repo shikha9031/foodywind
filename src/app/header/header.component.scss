@@ -5,9 +5,48 @@
 .search-box{
     width: 60%;
     position: relative;
+    @media(max-width:1350px){
+        width: 66%;
+    }
+    @media(max-width:980px){
+        width: 100%;
+    }
+    .dropdown{
+        position: absolute;
+        left: 24px;
+        top: 0;
+        @media(max-width:1200px){
+            left: 18px;
+        }
+        @media(max-width:980px){
+            left: 0;
+        }
+        @media(max-width:699px){
+            left: 0;
+            position: relative;
+            margin-bottom: 10px;
+        }
+        @media(max-width:409px){
+            margin-bottom: 10px;
+        }
+        .btn-color{
+            background: #f8f9fd;
+            color: black;
+        }
+    }
     input{
         width: 86%;
         margin-left: 3%;
+        padding-left: 142px;
+        @media(max-width:1200px){
+            width: 80%;
+        }
+        @media(max-width:980px){
+            margin-left: 0px;
+        }
+        @media(max-width:699px){
+            padding-left: .75rem;
+        }
     }
     .autosuggestion{
         border-radius: 0 0 2px 2px;
@@ -23,13 +62,31 @@
         white-space: nowrap;
         padding: 10px 0px 20px;
         max-height: 200px;
-        cursor: pointer;        
+        cursor: pointer;  
+        @media(max-width:1150px){
+            left: 20px
+        }
+        @media(max-width:980px){
+            width: 80%;
+            left: 0px;
+            top: 36px;
+        }
+        @media(max-width:699px){
+            top: 85px;
+        }
+
         .list{
             padding: 10px 30px;
             list-style-type: none;
             &:hover{
                 background: #efefef;
             }
+        }
+    }
+    .search-btn{
+        @media(max-width:576px){
+            margin-bottom: 0!important;
+            margin-top: 0!important;
         }
     }
 
