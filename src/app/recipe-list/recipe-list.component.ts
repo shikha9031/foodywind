@@ -14,6 +14,7 @@ import * as readMoreRef from '../store/action/read-more.action'
 export class RecipeListComponent implements OnInit {
   recipeList: any = [];
   keyword: any;
+  baseURl = "";
 
   constructor(
      private _keywordService:KeywordService,
@@ -32,16 +33,19 @@ export class RecipeListComponent implements OnInit {
   }
   callApi(){
     if(this.keyword){
-      this._cookingService.getRecipeByIngriedients(this.keyword).subscribe(res=>{
-        this.recipeList = res;
+      this._cookingService.extractRecipeVideo(this.keyword).subscribe(res=>{
+        if(res.items && res.items.length>0)  this.recipeList = res.items;
       },error=>{
         console.log(error);
       })
     }
   }
 
-  redirectTo(param){
-    this._store.dispatch(new readMoreRef.ReadMoreAction(param));
-    this._route.navigate(['/read-more']);
+  showVideo(param){
+    window.scrollTo(0, 0);
+    this.baseURl = 'https://www.youtube.com/embed/'+ param;
+    console.log(this.baseURl);
+   // this._store.dispatch(new readMoreRef.ReadMoreAction(param));
+    //this._route.navigate(['/read-more']);
   }
 }

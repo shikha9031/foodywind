@@ -60,4 +60,25 @@ export class CookingService {
     }
     return this._httpClient.get<any>('https://api.spoonacular.com/recipes/autocomplete', httpOptionsForRecipe);    
   }
+  
+  autoIngredeintsSuggestion(param){
+    let httpOptionsForRecipe = {
+      headers: new HttpHeaders({
+        'Content-Type': 'application/json'
+      }),
+      params: { 'apiKey':'a1ebedbdd79346e7b600f9382f080bc4', 'number':'20', 'query':param }
+    }
+    return this._httpClient.get<any>('https://api.spoonacular.com/food/ingredients/autocomplete', httpOptionsForRecipe);    
+  }
+
+  extractRecipeVideo(param){
+    let httpOptionsForRecipe = {
+      headers: new HttpHeaders({
+        'Content-Type': 'application/json'
+      }),
+      params: { 'key':'AIzaSyATIoN1F0eAwjHcyWNTrrupL-8izfWDvFM', 'part':'snippet', 'q':param, 'type':'video', "maxResults":'20', 'topicId':'/m/02wbm'  }
+    }
+    return this._httpClient.get<any>('https://www.googleapis.com/youtube/v3/search', httpOptionsForRecipe);    
+  }
+
 }

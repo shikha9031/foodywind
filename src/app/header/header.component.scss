@@ -37,16 +37,15 @@
     input{
         width: 86%;
         margin-left: 3%;
-        padding-left: 142px;
         @media(max-width:1200px){
             width: 80%;
         }
         @media(max-width:980px){
             margin-left: 0px;
         }
-        @media(max-width:699px){
-            padding-left: .75rem;
-        }
+        // @media(max-width:699px){
+        //     padding-left: .75rem;
+        // }
     }
     .autosuggestion{
         border-radius: 0 0 2px 2px;

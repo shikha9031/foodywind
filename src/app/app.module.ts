@@ -22,6 +22,8 @@ import { AppComponent } from './app.component';
 import { HomeComponent } from './home/home.component';
 import { ReadMoreComponent } from './read-more/read-more.component';
 import { RandomRecipeComponent } from './random-recipe/random-recipe.component';
+import { PrivacyPolicyComponent } from './privacy-policy/privacy-policy.component';
+import { SafeUrlPipe } from './pipe/safe-url.pipe';
 
 
 let reducer = {
@@ -40,6 +42,8 @@ let reducer = {
     RecipeListComponent,
     ReadMoreComponent,
     RandomRecipeComponent,
+    PrivacyPolicyComponent,
+    SafeUrlPipe,
   ],
   imports: [
     BrowserModule,

@@ -1,16 +1,21 @@
 <div class="all-recipe-wrapper">
   <h2>Recipe List</h2>
+  <div class="iframe-container">
+    <iframe width="100%" height="90%" *ngIf="baseURl != ''" [src]='baseURl | safeUrl'>
+    </iframe>
+  </div>
   <div class="all-recipe-list-below" *ngIf="recipeList.length>0">
     <div *ngFor="let list of recipeList; let i = index" class="each-recipe-wrapper">
-      <div class="title" data-toggle="tooltip" data-placement="top" [title]="list.title">{{list.title | limitTo : 25}}</div>
-      <div class="image" *ngIf="list.image"><img [src]="list.image"></div>
-      <div class="no-image" *ngIf="!list.image">Image Not Available</div>
-      <button type="button" class="btn btn-primary" (click)="redirectTo(list.id)">Get Dish Recipe</button>
+      <div class="title" data-toggle="tooltip" data-placement="top">{{list.snippet.title | limitTo : 25}}</div>
+      <!--[title]="list.snippet.title"-->
+      <div class="image" *ngIf="list.snippet.thumbnails && list.snippet.thumbnails.medium"><img [src]="list.snippet.thumbnails.medium.url"></div>
+      <div class="no-image" *ngIf="!list.snippet.thumbnails">Image Not Available</div>
+      <button type="button" class="btn btn-primary" (click)="showVideo(list.id.videoId)">Get Dish Recipe</button>
     </div>
   </div>
   <div class="d-flex justify-content-center" *ngIf="recipeList.length<=0">
     <div class="spinner-border" role="status">
       <span class="sr-only">Loading...</span>
     </div>
-  </div> 
+  </div>
 </div>

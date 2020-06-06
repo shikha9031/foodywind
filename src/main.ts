@@ -8,7 +8,5 @@ import { environment } from './environments/environment';
 if (environment.production) {
   enableProdMode();
 }
-if (!/localhost/.test(window.location.hostname)) { enableProdMode(); }
-
 platformBrowserDynamic().bootstrapModule(AppModule)
   .catch(err => console.error(err));

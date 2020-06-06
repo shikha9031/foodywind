@@ -6,6 +6,7 @@ import { Store } from "@ngrx/store";
 import { KeywordInterface } from "../interface/keyword.interface";
 import { CookingService } from '../service/cooking.service';
 import * as readMoreRef from '../store/action/read-more.action'
+import { ChangeDetectorRef } from "@angular/core";
 
 @Component({
   selector: 'header',
@@ -13,32 +14,44 @@ import * as readMoreRef from '../store/action/read-more.action'
   styleUrls: ['./header.component.scss']
 })
 export class HeaderComponent implements OnInit {
+  suggestionBoxForIngredients: boolean;
 
   keyword:any = '';
   timer:any;
   autoSuggestionObj:any = [];
-  suggestion:string = "Suggestion: puloa";
+  suggestion:string = "Suggestion: onion,garlic";
   searchType:string = 'Food Name';
   opensuggestionBox:boolean = false;
+  currentUrl:string='';
 
-  constructor(private _route:Router, private _keywordService:KeywordService, private _store:Store<any>, private _cookingService:CookingService) { }
+  constructor(
+    private _route:Router,
+    private _keywordService:KeywordService, 
+    private _store:Store<any>,
+    private _cookingService:CookingService,
+    private cd:ChangeDetectorRef) { }
 
   ngOnInit() {}
-  
+
+  ngAfterViewChecked(){
+    this.currentUrl = window.location.pathname;
+    this.cd.detectChanges();
+  }
+
   submitSearchKeyword(){
-    if(this.searchType === 'Ingredients'){
+   // if(this.searchType === 'Ingredients'){
       this._store.dispatch(new keywordRef.KeywordAction(this.keyword));
       this._route.navigate(['/recipeList']);
-    }
-    else if(this.searchType === 'Food Name'){
-      if(this.autoSuggestionObj && this.autoSuggestionObj.length>0){
-          for(let i = 0; i<this.autoSuggestionObj.length; i++){
-            if(this.autoSuggestionObj[i].title === this.keyword){
-              this.readMorePageNavigate(this.autoSuggestionObj[i].id);
-            }
-          }
-      }
-    }
+    //}
+    // else if(this.searchType === 'Food Name'){
+    //   if(this.autoSuggestionObj && this.autoSuggestionObj.length>0){
+    //       for(let i = 0; i<this.autoSuggestionObj.length; i++){
+    //         if(this.autoSuggestionObj[i].title === this.keyword){
+    //           this.readMorePageNavigate(this.autoSuggestionObj[i].id);
+    //         }
+    //       }
+    //   }
+    // }
   }
 
 
@@ -52,14 +65,39 @@ export class HeaderComponent implements OnInit {
             this.autoSuggestionObj = res;
            }
          })
-      },100)
+      },500)
     }
-   
+    else if(this.searchType === 'Ingredients'){
+      clearTimeout(this.timer);
+      this.suggestionBoxForIngredients = true;
+      this.timer = setTimeout(res=>{
+         this._cookingService.autoIngredeintsSuggestion(this.keyword).subscribe(res=>{
+           if(res){
+            this.autoSuggestionObj = res;
+           }
+         })
+      },500)
+    }
   }
+
 
   readMorePageNavigate(param){
     this.opensuggestionBox = false;
     this._store.dispatch(new readMoreRef.ReadMoreAction(param));
     this._route.navigate(['/read-more']);
+  }
+
+  selectIngredeints(param){
+    if(this.keyword.chartAt(this.keyword.lenght-1) !== ','){
+      let lastData = this.keyword.lastIndexOf(',')
+    }
+    if(this.keyword === '') this.keyword = param;
+    else if(this.keyword !== '') this.keyword = this.keyword+","+param;
+  }
+
+  extractRcipeVideo(){
+    this._cookingService.extractRecipeVideo().subscribe(res=>{
+      console.log(res);
+    })
   }
 }

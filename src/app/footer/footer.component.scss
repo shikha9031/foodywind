@@ -1,14 +1,19 @@
 .footer-container{
     padding: 10px 70px;
     background: #007bff;
-    .copywrite, .contact-us{
+    text-align: center;
+    .copywrite, .contact-us, .privacy-policy{
         color: white;
     }
     .copywrite{
-        display: inline-block;        
+        float: left;      
     }
     .contact-us{
         float: right;
+    }
+    .privacy-policy{
+        display: inline-block;
+        cursor: pointer;
     }
     @media(max-width:768px){
         padding: 15px 50px;

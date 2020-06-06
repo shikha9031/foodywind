@@ -4,6 +4,7 @@ import { HomeComponent } from './home/home.component';
 import { RecipeListComponent } from './recipe-list/recipe-list.component';
 import { ReadMoreComponent } from './read-more/read-more.component'
 import { RandomRecipeComponent } from './random-recipe/random-recipe.component';
+import { PrivacyPolicyComponent } from './privacy-policy/privacy-policy.component';
 
 const routes: Routes = [
 { path: '', redirectTo: 'home', pathMatch: 'full' },
@@ -11,6 +12,7 @@ const routes: Routes = [
 { path: 'recipeList', component: RecipeListComponent },
 { path: 'read-more', component: ReadMoreComponent },
 { path: 'random-recipe', component: RandomRecipeComponent },
+{ path: 'privacy-policy', component: PrivacyPolicyComponent },
 { path: '**', redirectTo: 'home', pathMatch: 'full' },
 ];
 
