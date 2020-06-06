@@ -94,10 +94,4 @@ export class HeaderComponent implements OnInit {
     if(this.keyword === '') this.keyword = param;
     else if(this.keyword !== '') this.keyword = this.keyword+","+param;
   }
-
-  extractRcipeVideo(){
-    this._cookingService.extractRecipeVideo().subscribe(res=>{
-      console.log(res);
-    })
-  }
 }
