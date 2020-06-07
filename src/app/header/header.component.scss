@@ -106,10 +106,18 @@
 .nav-link{
     font-family: 'IBM Plex Sans', sans-serif !important;
 }
-   
-#search-icon{
-    fill: rgba(255,255,255,.5);
+
+.search-icon-wrapper{
+    display: none;
+    @media(max-width:980px){
+        display: inline-block;
+    }
+    #search-icon{
+        fill: rgba(255,255,255,.5);
+    }
 }
+   
+
 .back-icon{
     #backBtn{
         fill: rgba(255,255,255,.5);
