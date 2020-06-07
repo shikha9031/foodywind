@@ -5,11 +5,12 @@
 .search-box{
     width: 60%;
     position: relative;
+    display: block;
     @media(max-width:1350px){
         width: 66%;
     }
     @media(max-width:980px){
-        width: 100%;
+        display: none;
     }
     .dropdown{
         position: absolute;
@@ -90,7 +91,27 @@
     }
 
 }
+.search-box-mobile-view{
+    display: none;
+    width: 93%;
+    text-align: center;
+    input{
+        width: 90%;
+        display: inline-block;
+    }
+    @media(max-width:980px){
+        display: inline-block;
+    }
+}
 .nav-link{
     font-family: 'IBM Plex Sans', sans-serif !important;
 }
    
+#search-icon{
+    fill: rgba(255,255,255,.5);
+}
+.back-icon{
+    #backBtn{
+        fill: rgba(255,255,255,.5);
+    }
+}

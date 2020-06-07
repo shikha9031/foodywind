@@ -3,6 +3,7 @@ import { CookingService } from '../service/cooking.service';
 import { Router } from "@angular/router";
 import { Store } from "@ngrx/store";
 import * as randomRecipeRef from '../store/action/random.action';
+import * as keywordRef from '../store/action/keyword.action';
 
 @Component({
   selector: 'app-home',

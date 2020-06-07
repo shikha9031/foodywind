@@ -26,6 +26,7 @@ export class RecipeListComponent implements OnInit {
     this._store.select('keywordReducer').subscribe((res:KeywordInterface)=>{
         if(res && res.keyword){
           this.keyword = res.keyword;
+          this.baseURl = '';
           this.callApi();
         }
     })
@@ -44,8 +45,5 @@ export class RecipeListComponent implements OnInit {
   showVideo(param){
     window.scrollTo(0, 0);
     this.baseURl = 'https://www.youtube.com/embed/'+ param;
-    console.log(this.baseURl);
-   // this._store.dispatch(new readMoreRef.ReadMoreAction(param));
-    //this._route.navigate(['/read-more']);
   }
 }

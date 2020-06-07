@@ -3,7 +3,7 @@ import { Router } from "@angular/router";
 import { filter } from 'rxjs/operators';
 import { NavigationEnd } from "@angular/router";
 
-declare var gtag;
+declare var ga;
 
 @Component({
   selector: 'app-root',
@@ -13,15 +13,12 @@ declare var gtag;
 export class AppComponent {
   title = 'Foodywind';
 
-  constructor(private router:Router){
-    const navEvent =  router.events.pipe(
-      filter( event => event instanceof NavigationEnd)
-    );
-
-    navEvent.subscribe((event: NavigationEnd)=>{
-      gtag('config', 'UA-168699319-1', {
-        'page_path': event.urlAfterRedirects
-      });          
-    })
+  constructor(private router: Router) {
+    this.router.events.subscribe(event => {
+      if (event instanceof NavigationEnd) {
+        ga('set', 'page', event.urlAfterRedirects);
+        ga('send', 'pageview');
+      }
+    });
   }
 }
