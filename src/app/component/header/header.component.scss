@@ -34,10 +34,20 @@
             background: #f8f9fd;
             color: black;
         }
+        .dropdown-item{
+            cursor: pointer;
+            .form-check{
+                justify-content: initial !important;
+                label{
+                    cursor: pointer;
+                }
+            }
+        }
     }
-    input{
+    .search-box-input{
         width: 86%;
         margin-left: 3%;
+        padding-left: 150px;
         @media(max-width:1200px){
             width: 80%;
         }

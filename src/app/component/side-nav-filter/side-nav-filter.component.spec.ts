@@ -1,20 +1,20 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { ReadMoreComponent } from './read-more.component';
+import { SideNavFilterComponent } from './side-nav-filter.component';
 
-describe('ReadMoreComponent', () => {
-  let component: ReadMoreComponent;
-  let fixture: ComponentFixture<ReadMoreComponent>;
+describe('SideNavFilterComponent', () => {
+  let component: SideNavFilterComponent;
+  let fixture: ComponentFixture<SideNavFilterComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ ReadMoreComponent ]
+      declarations: [ SideNavFilterComponent ]
     })
     .compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(ReadMoreComponent);
+    fixture = TestBed.createComponent(SideNavFilterComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

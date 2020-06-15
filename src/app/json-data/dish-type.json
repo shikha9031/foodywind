@@ -1,0 +1,53 @@
+{
+    "data":[
+        {
+            "label":"Biscuits and cookies"
+        },
+        {
+            "label":"Bread"
+        },
+        {
+            "label":"Cereals"
+        },
+        {
+            "label":"Condiments and sauces"
+        },
+        {
+            "label":"Drinks"
+        },
+        {
+            "label":"Desserts"
+        },
+        {
+            "label":"Main course"
+        },
+        {
+            "label":"Pancake"
+        },
+        {
+            "label":"Preps"
+        },
+        {
+            "label":"Preserve"
+        },
+        {
+            "label":"Salad"
+        },
+        {
+            "label":"Sandwiches"
+        },
+        {
+            "label":"Side dish"
+        },
+        {
+            "label":"Soup"
+        },
+        {
+            "label":"Starter"
+        },
+        {
+            "label":"Sweets"
+        }
+
+    ]
+}

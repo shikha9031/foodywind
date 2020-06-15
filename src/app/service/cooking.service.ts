@@ -19,28 +19,6 @@ export class CookingService {
    return this._httpClient.get<any>('https://api.spoonacular.com/recipes/random', httpOptionsForRecipe);
   }
 
-  foodInfoFun(foodId){
-    let httpOptions = {
-      headers: new HttpHeaders({
-        'Content-Type': 'application/json'
-      }),
-      params: { 'apiKey':'a1ebedbdd79346e7b600f9382f080bc4', 'includeNutrition':'false'}
-    };
-    let foodInfo = foodId+'/information';
-    return this._httpClient.get<any>("https://api.spoonacular.com/recipes/"+foodInfo, httpOptions);
-  }
-
-  getRecipeByIngriedients(keyword){
-    let httpOptionsForRecipe = {
-      headers: new HttpHeaders({
-        'Content-Type': 'application/json'
-      }),
-      params: { 'apiKey':'a1ebedbdd79346e7b600f9382f080bc4', 'ingredients':keyword, 'number':'50' }
-    }
-    
-    return this._httpClient.get<any>('https://api.spoonacular.com/recipes/findByIngredients', httpOptionsForRecipe);    
-  }
-
   searchRecipe(){
     let httpOptionsForRecipe = {
       headers: new HttpHeaders({
@@ -49,26 +27,6 @@ export class CookingService {
       params: { 'apiKey':'a1ebedbdd79346e7b600f9382f080bc4', 'number':'5','cuisine':'Indian','excludeIngredients':'beef' }
     }
     return this._httpClient.get<any>('https://api.spoonacular.com/recipes/search', httpOptionsForRecipe);    
-  }
-
-  autoSuggestion(param){
-    let httpOptionsForRecipe = {
-      headers: new HttpHeaders({
-        'Content-Type': 'application/json'
-      }),
-      params: { 'apiKey':'a1ebedbdd79346e7b600f9382f080bc4', 'number':'20', 'query':param }
-    }
-    return this._httpClient.get<any>('https://api.spoonacular.com/recipes/autocomplete', httpOptionsForRecipe);    
-  }
-  
-  autoIngredeintsSuggestion(param){
-    let httpOptionsForRecipe = {
-      headers: new HttpHeaders({
-        'Content-Type': 'application/json'
-      }),
-      params: { 'apiKey':'a1ebedbdd79346e7b600f9382f080bc4', 'number':'20', 'query':param }
-    }
-    return this._httpClient.get<any>('https://api.spoonacular.com/food/ingredients/autocomplete', httpOptionsForRecipe);    
   }
 
   extractRecipeVideo(param){
@@ -81,4 +39,13 @@ export class CookingService {
     return this._httpClient.get<any>('https://www.googleapis.com/youtube/v3/search', httpOptionsForRecipe);    
   }
 
+  getEdamamFood(data){
+    let httpOptionsForRecipe = {
+      headers: new HttpHeaders({
+        'Content-Type': 'application/json'
+      }),
+      params: { 'app_id':'d0ea9085', 'app_key':"87d489a3f81e4d63571f3fa501729f95", "q": data, "health":"red-meat-free" }
+    }
+    return this._httpClient.get<any>('https://api.edamam.com/search', httpOptionsForRecipe);    
+  }
 }

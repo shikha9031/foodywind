@@ -1,0 +1,58 @@
+{
+    "data":[
+        {
+            "label":"American"
+        },
+        {
+            "label":"Asian"
+        },
+        {
+            "label":"British"
+        },
+        {
+            "label":"Caribbean"
+        },
+        {
+            "label":"Central Europe"
+        },
+        {
+            "label":"Chinese"
+        },
+        {
+            "label":"Eastern Europe"
+        },
+        {
+            "label":"French"
+        },
+        {
+            "label":"Indian"
+        },
+        {
+            "label":"Italian"
+        },
+        {
+            "label":"Japanese"
+        },
+        {
+            "label":"Kosher"
+        },
+        {
+            "label":"Mediterranean"
+        },
+        {
+            "label":"Mexican"
+        },
+        {
+            "label":"Middle Eastern"
+        },
+        {
+            "label":"Nordic"
+        },
+        {
+            "label":"South American"
+        },
+        {
+            "label":"South East Asian"
+        }
+    ]
+}

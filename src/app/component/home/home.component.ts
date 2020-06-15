@@ -1,9 +1,9 @@
 import { Component, OnInit } from '@angular/core';
-import { CookingService } from '../service/cooking.service';
+import { CookingService } from '../../service/cooking.service';
 import { Router } from "@angular/router";
 import { Store } from "@ngrx/store";
-import * as randomRecipeRef from '../store/action/random.action';
-import * as keywordRef from '../store/action/keyword.action';
+import * as randomRecipeRef from '../../store/action/random.action';
+import * as keywordRef from '../../store/action/keyword.action';
 
 @Component({
   selector: 'app-home',
@@ -33,8 +33,9 @@ export class HomeComponent implements OnInit {
   }
 
 
-  redirectTo(param){
-    window.open(param, '_blank');
+  redirectTo(id){
+    this._store.dispatch(new randomRecipeRef.RandomSearchFoodAction({id:id, foodArray:this.randomRecipe}))    
+    this._route.navigate(['/recipe-info']);
   }
 
   readMorePageNavigate(id){

@@ -1,0 +1,154 @@
+{
+    "data":[
+        {
+            "label":"Calcium",
+            "unit":"mg",
+            "ntr_code":"CA"
+        },
+        {
+            "label":"Carbs",
+            "unit":"g",
+            "ntr_code":"CHOCDF"
+        },
+        {
+            "label":"Cholesterol",
+            "unit":"mg",
+            "ntr_code":"CHOLE"
+        },
+        {
+            "label":"Monounsaturated",
+            "unit":"g",
+            "ntr_code":"FAMS"
+        },
+        {
+            "label":"Polyunsaturated",
+            "unit":"g",
+            "ntr_code":"FAPU"
+        },
+        {
+            "label":"Sugars",
+            "unit":"g",
+            "ntr_code":"SUGAR"
+        },
+        {
+            "label":"Fat",
+            "unit":"g",
+            "ntr_code":"FAT"
+        },
+        {
+            "label":"Trans",
+            "unit":"g",
+            "ntr_code":"FATRN"
+        },
+        {
+            "label":"Iron",
+            "unit":"mg",
+            "ntr_code":"FE"
+        },
+        {
+            "label":"Fiber",
+            "unit":"g",
+            "ntr_code":"FIBTG"
+        },
+        {
+            "label":"Folate (Equivalent)",
+            "unit":"æg",
+            "ntr_code":"FOLDFE"
+        },
+        {
+            "label":"Potassium",
+            "unit":"mg",
+            "ntr_code":"K"
+        },
+        {
+            "label":"Magnesium",
+            "unit":"mg",
+            "ntr_code":"MG"
+        },
+        {
+            "label":"Sodium",
+            "unit":"mg",
+            "ntr_code":"NA"
+        },
+        {
+            "label":"Vitamin B6",
+            "unit":"mg",
+            "ntr_code":"VITB6A"
+        },
+        {
+            "label":"Energy",
+            "unit":"kcal",
+            "ntr_code":"ENERC_KCAL"
+        },
+        {
+            "label":"Niacin (B3)",
+            "unit":"mg",
+            "ntr_code":"NIA"
+        },
+        {
+            "label":"Phosphorus",
+            "unit":"mg",
+            "ntr_code":"P"
+        },
+        {
+            "label":"Protein",
+            "unit":"g",
+            "ntr_code":"PROCNT"
+        },
+        {
+            "label":"Riboflavin (B2)",
+            "unit":"mg",
+            "ntr_code":"RIBF"
+        },
+        {
+            "label":"Sugars, added",
+            "unit":"g",
+            "ntr_code":"SUGAR.added"
+        },
+        {
+            "label":"Saturated",
+            "unit":"g",
+            "ntr_code":"FASAT"
+        },
+        {
+            "label":"Vitamin E",
+            "unit":"mg",
+            "ntr_code":"TOCPHA"
+        },
+        {
+            "label":"Vitamin A",
+            "unit":"æg",
+            "ntr_code":"VITA_RAE"
+        },
+        {
+            "label":"Vitamin B12",
+            "unit":"æg",
+            "ntr_code":"VITB12"
+        },
+        {
+            "label":"Folate (food)",
+            "unit":"æg",
+            "ntr_code":"FOLFD"
+        },
+        {
+            "label":"Vitamin C",
+            "unit":"mg",
+            "ntr_code":"VITC"
+        },
+        {
+            "label":"Vitamin D",
+            "unit":"æg",
+            "ntr_code":"VITD"
+        },
+        {
+            "label":"Vitamin K",
+            "unit":"æg",
+            "ntr_code":"VITK1"
+        },
+        {
+            "label":"Thiamin (B1)",
+            "unit":"mg",
+            "ntr_code":"THIA"
+        }
+    ]
+}

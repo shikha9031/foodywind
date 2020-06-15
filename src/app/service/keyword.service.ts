@@ -4,15 +4,16 @@ import { BehaviorSubject } from 'rxjs';
 @Injectable({
   providedIn: 'root'
 })
+
 export class KeywordService {
   searchKeyword = new BehaviorSubject('');
   
   constructor() { }
 
-   getKeyword(){
+    getKeyword(){
     return this.searchKeyword.asObservable();
   }
-   setKeyword(param:string){
+    setKeyword(param:any){
     this.searchKeyword.next(param);
   }
 }

@@ -1,0 +1,19 @@
+{
+    "data":[
+        {
+            "label":"Breakfast"
+        },
+        {
+            "label":"Lunch"
+        },
+        {
+            "label":"Dinner"
+        },
+        {
+            "label":"Snack"
+        },
+        {
+            "label":"Teatime"
+        }
+    ]
+}

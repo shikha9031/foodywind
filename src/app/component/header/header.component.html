@@ -1,6 +1,6 @@
 <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
-  <button class="navbar-toggler" *ngIf="!searchFormFlag" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo01" aria-controls="navbarTogglerDemo01"
-    aria-expanded="false" aria-label="Toggle navigation">
+  <button class="navbar-toggler" *ngIf="!searchFormFlag" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo01"
+    aria-controls="navbarTogglerDemo01" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
   </button>
   <div class="search-icon-wrapper" (click)="openSearchForm('open')" *ngIf="!searchFormFlag">
@@ -8,34 +8,46 @@
       <path id="search-icon" fill-rule="evenodd" d="M15.7 13.3l-3.81-3.83A5.93 5.93 0 0013 6c0-3.31-2.69-6-6-6S1 2.69 1 6s2.69 6 6 6c1.3 0 2.48-.41 3.47-1.11l3.83 3.81c.19.2.45.3.7.3.25 0 .52-.09.7-.3a.996.996 0 000-1.41v.01zM7 10.7c-2.59 0-4.7-2.11-4.7-4.7 0-2.59 2.11-4.7 4.7-4.7 2.59 0 4.7 2.11 4.7 4.7 0 2.59-2.11 4.7-4.7 4.7z"></path>
     </svg>
   </div>
-  <div class="back-icon"  *ngIf="searchFormFlag" (click)="openSearchForm('close')">
-      <svg id="backBtn" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" width="16" height="16"><path d="M8.5 4.5L7 3 2 8l5 5 1.5-1.5L5.821 9H14V7H5.821L8.5 4.5z"></path></svg>
+  <div class="back-icon" *ngIf="searchFormFlag" (click)="openSearchForm('close')">
+    <svg id="backBtn" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" width="16" height="16">
+      <path d="M8.5 4.5L7 3 2 8l5 5 1.5-1.5L5.821 9H14V7H5.821L8.5 4.5z"></path>
+    </svg>
   </div>
   <form class="form-inline my-2 my-lg-0 search-box search-box-mobile-view" *ngIf="searchFormFlag" #searchForm="ngForm" (ngSubmit)="submitSearchKeyword()">
-      <input class="form-control mr-sm-2" type="search" [(ngModel)]="keyword" name="keywords" required [placeholder]="suggestion"
-        aria-label="Search" autocomplete="off">
+    <input class="form-control mr-sm-2" type="search" [(ngModel)]="keyword" name="keywords" required [placeholder]="suggestion"
+      aria-label="Search" autocomplete="off">
   </form>
   <div class="collapse navbar-collapse" id="navbarTogglerDemo01">
     <a class="navbar-brand brand">foodywind</a>
     <ul class="navbar-nav mt-2 mt-lg-0">
-      <li class="nav-item"  [class.active]="currentUrl === '/home'">
-        <a class="nav-link" routerLink="home">Home <span class="sr-only">(current)</span></a>
-      </li>
-      <li class="nav-item" [class.active]="currentUrl === '/random-recipe'">
-        <a class="nav-link" routerLink="random-recipe">Random Recipe</a>
+      <li class="nav-item" [class.active]="currentUrl === '/home'">
+        <a class="nav-link" routerLink="home">Home</a>
+        <!-- <span class="sr-only">(current)</span>-->
       </li>
     </ul>
     <form class="form-inline my-2 my-lg-0 search-box" #searchForm="ngForm" (ngSubmit)="submitSearchKeyword()">
-      <!-- <div class="dropdown">
+      <div class="dropdown">
         <button type="button" class="btn btn-primary dropdown-toggle btn-color" data-toggle="dropdown">
-          {{searchType}}
+          {{searchType | limitTo : 10}}
         </button>
         <div class="dropdown-menu">
-          <a class="dropdown-item" (click)="searchType = 'Food Name';suggestion ='Suggestion: puloa'; keyword = '' ">Search By Food Name</a>
-          <a class="dropdown-item" (click)="searchType = 'Ingredients';suggestion ='Suggestion: onion,garlic'; keyword = ''">Search By Ingredients</a>
+          <div class="dropdown-item" (click)="searchType = 'Recipe search with ingredients';suggestion ='Suggestion: onion,potato'; keyword = '' ">
+            <div class="form-check">
+              <label class="form-check-label" for="radio1">
+                  <input type="radio" class="form-check-input" id="radio1" name="optradio" value="option1" checked>Recipe search with ingredients
+                </label>
+            </div>
+          </div>
+          <div class="dropdown-item" (click)="searchType = 'Food with nutrition';suggestion ='Suggestion: palak paneer'; keyword = ''">
+            <div class="form-check">
+              <label class="form-check-label" for="radio2">
+                  <input type="radio" class="form-check-input" id="radio2" name="optradio" value="option2">Food with nutrition
+                </label>
+            </div>
+          </div>
         </div>
-      </div> -->
-      <input class="form-control mr-sm-2" type="search" [(ngModel)]="keyword" name="keywords" required [placeholder]="suggestion"
+      </div>
+      <input class="form-control mr-sm-2 search-box-input" type="search" [(ngModel)]="keyword" name="keywords" required [placeholder]="suggestion"
         aria-label="Search" autocomplete="off">
       <button class="btn btn-outline-light search-btn my-2 my-sm-0" type="submit" [disabled]="!searchForm.valid">Search</button>
       <!-- auto suggestion dropdown -->
@@ -48,3 +60,4 @@
     </form>
   </div>
 </nav>
+<!-- <filter></filter> -->
