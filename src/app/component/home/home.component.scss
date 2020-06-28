@@ -27,8 +27,35 @@
                     left: 0;
                     .title{
                         font-size: 20px;
+                        word-break: break-word;
                     }
                 }
+            }
+        }
+    }
+    .food-options{
+        width: 82%;
+        margin: 50px auto;
+        .item{
+            width: 150px;
+            height: 150px;
+            background: #3da4ab;;
+            color: #ffffff;
+            border-radius: 50%;
+            font-size: 18px;
+            font-weight: 600;
+            text-transform: uppercase;
+            cursor: pointer;
+            box-shadow: 2px 5px 5px #aaaaaa;
+            text-align: center;
+            span{
+                top: 41%;
+                position: relative;
+                text-transform: uppercase;;
+            
+            }
+            &:hover{
+                background: #e7305b;
             }
         }
     }
@@ -70,6 +97,7 @@
                     letter-spacing: normal;
                     font-size: 30px;
                     font-weight: 600;
+                    word-break: break-word;
                 }
                 .summary-container{
                     margin-bottom: 2rem;                    
@@ -79,16 +107,24 @@
                         line-height: 36px;
                     }
                     .read-more{
-                        color: #007bff;
+                        font-size: 15px;
+                        color: #3da4ab;
                         text-decoration: underline;
                         cursor: pointer;
                     }
+                    
                 }
                
                 .image{
                     margin-bottom: 2rem;
+                    // height: 300px;
+                    // @media(max-width:1024px){
+                    //     height: auto;
+                    // }
                     img{
                         width: 100%;
+                        max-height: 100%;
+                        object-fit: cover;
                     }
                 }
                 .no-image{

@@ -9,7 +9,7 @@
       <div class="title" data-toggle="tooltip" data-placement="top" [title]="list.snippet.title">{{list.snippet.title | limitTo : 25}}</div>
       <div class="image" *ngIf="list.snippet.thumbnails && list.snippet.thumbnails.medium"><img [src]="list.snippet.thumbnails.medium.url"></div>
       <div class="no-image" *ngIf="!list.snippet.thumbnails">Image Not Available</div>
-      <button type="button" class="btn btn-primary" (click)="showVideo(list.id.videoId)">Get Dish Recipe</button>
+      <button type="button" class="btn primary-color btn-color" (click)="showVideo(list.id.videoId)">Get Dish Recipe</button>
     </div>
   </div>
   <div class="d-flex justify-content-center spinner-container" *ngIf="recipeList.length<=0">

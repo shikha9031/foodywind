@@ -12,3 +12,15 @@ input:focus, textarea {
 }
 html, body { height: 100%; }
 body { margin: 0; font-family: 'IBM Plex Sans', sans-serif !important; }
+
+.food-options{
+    .owl-stage-outer{
+        height: 165px !important;
+    }
+}
+.primary-color{
+    background: #3da4ab !important;  
+}
+.btn-color{
+    color: #ffffff !important;
+}

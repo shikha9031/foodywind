@@ -27,6 +27,38 @@
         transition: 0.5s;
         padding-top: 60px;
       }
+      .filters-btn{
+        padding: 0 20px;
+        margin-bottom: 20px;
+        .clear-all{
+          background: #F8FAFD;
+          border-radius: 4px;
+          font-weight: 500;
+          font-size: 20px;
+          line-height: 24px;
+          color: #35373E;
+          padding: 9px 21px 9px 21px;
+          float: right;
+          cursor: pointer;
+          @media(max-width){
+              font-size: 18px;
+              line-height: 24px;
+              padding: 9px 9px 9px 16px;
+          }
+        }
+        .apply-filter{
+          background: #131417;
+          padding: 9px 21px 9px 21px;
+          color: #FFFFFF;
+          cursor: pointer;
+          border-radius: 4px;
+          font-weight: 500;
+          font-size: 20px;
+          line-height: 24px;
+          display: inline-block;
+        }
+      }
+     
       .menu-body{
         padding: 0 20px;
         .list-wrapper{

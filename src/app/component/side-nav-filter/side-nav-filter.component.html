@@ -1,9 +1,13 @@
 <div id="mySidenav" class="sidenav side-nav-container" [perfectScrollbar]="config">
+  <div class="filters-btn">
+      <div class="clear-all">Clear All</div>
+      <div class="apply-filter">Apply</div>    
+  </div>
   <a href="javascript:void(0)" class="closebtn" (click)="closeNav()">&times;</a>
   <div class="menu-body">
     <div class="list-wrapper">
       <div class="list" (click)="openDietData = !openDietData">Diet</div>
-      <div class="data-container" [class.show-dropdown]="openDietData" >
+      <div class="data-container" [class.show-dropdown]="openDietData">
         <div class="form-check" *ngFor="let list of dietData">
           <input class="form-check-input" type="checkbox" [value]="list.label">
           <label class="form-check-label">{{list.label}}</label>
@@ -12,52 +16,52 @@
     </div>
     <div class="list-wrapper">
       <div class="list" (click)="openhealthData = !openhealthData">Health</div>
-      <div class="data-container" [class.show-dropdown]="openhealthData" >
-          <div class="form-check" *ngFor="let list of healthData">
-            <input class="form-check-input" type="checkbox" [value]="list.label">
-            <label class="form-check-label">{{list.label}}</label>
-          </div>
+      <div class="data-container" [class.show-dropdown]="openhealthData">
+        <div class="form-check" *ngFor="let list of healthData">
+          <input class="form-check-input" type="checkbox" [value]="list.label">
+          <label class="form-check-label">{{list.label}}</label>
         </div>
+      </div>
     </div>
-    <div class="list-wrapper" >
+    <div class="list-wrapper">
       <div class="list" (click)="openCuisineData = !openCuisineData">Cuisine</div>
-      <div class="data-container" [class.show-dropdown]="openCuisineData" >
-          <div class="form-check" *ngFor="let list of cuisionData">
-            <input class="form-check-input" type="checkbox" [value]="list.label">
-            <label class="form-check-label">{{list.label}}</label>
-          </div>
+      <div class="data-container" [class.show-dropdown]="openCuisineData">
+        <div class="form-check" *ngFor="let list of cuisionData">
+          <input class="form-check-input" type="checkbox" [value]="list.label">
+          <label class="form-check-label">{{list.label}}</label>
         </div>
+      </div>
     </div>
     <div class="list-wrapper">
       <div class="list" (click)="openMealType = !openMealType">Meal Type</div>
-      <div class="data-container" [class.show-dropdown]="openMealType" >
-          <div class="form-check" *ngFor="let list of mealTypeData">
-            <input class="form-check-input" type="checkbox" [value]="list.label">
-            <label class="form-check-label">{{list.label}}</label>
-          </div>
+      <div class="data-container" [class.show-dropdown]="openMealType">
+        <div class="form-check" *ngFor="let list of mealTypeData">
+          <input class="form-check-input" type="checkbox" [value]="list.label">
+          <label class="form-check-label">{{list.label}}</label>
         </div>
+      </div>
     </div>
     <div class="list-wrapper">
       <div class="list" (click)="openDishType = !openDishType">Dish Type</div>
-      <div class="data-container" [class.show-dropdown]="openDishType" >
-          <div class="form-check" *ngFor="let list of dishTypeData">
-            <input class="form-check-input" type="checkbox" [value]="list.label">
-            <label class="form-check-label">{{list.label}}</label>
-          </div>
+      <div class="data-container" [class.show-dropdown]="openDishType">
+        <div class="form-check" *ngFor="let list of dishTypeData">
+          <input class="form-check-input" type="checkbox" [value]="list.label">
+          <label class="form-check-label">{{list.label}}</label>
         </div>
+      </div>
     </div>
     <div class="list-wrapper">
       <div class="list" (click)="openCaloriesData = !openCaloriesData">Calories</div>
-      <div class="data-container" [class.show-dropdown]="openCaloriesData" >
-          <div class="form-check" *ngFor="let list of nutritionCodeData">
-            <input class="form-check-input" type="checkbox" [value]="list.label">
-            <label class="form-check-label">{{list.label}}</label>
-          </div>
+      <div class="data-container" [class.show-dropdown]="openCaloriesData">
+        <div class="form-check" *ngFor="let list of nutritionCodeData">
+          <input class="form-check-input" type="checkbox" [value]="list.label">
+          <label class="form-check-label">{{list.label}}</label>
         </div>
+      </div>
     </div>
     <div class="list-wrapper">
       <div class="list" (click)="openExcludedItem = !openExcludedItem">Excluded</div>
     </div>
   </div>
 </div>
-<span  class="open-filter" (click)="openNav()">&#9776; Filter</span>
+<span class="open-filter" (click)="openNav()">&#9776; Filter</span>

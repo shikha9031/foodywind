@@ -1,37 +1,43 @@
-<side-nav-filter></side-nav-filter>
+<!-- <side-nav-filter></side-nav-filter> -->
 <div class="home-container">
     <div class="carousel slide slider-width mobile-view" data-ride="carousel">
         <div class="carousel-inner carousel-wrapper">
-            <div class="carousel-item img-container" (click)="redirectTo(list.sourceUrl)" [class.active]="i == 0" *ngFor="let list of foodData;let i = index">
-                <img class="d-block w-100 img-width" [src]="baseUri+list.image" alt="First slide">
+            <div class="carousel-item img-container" (click)="redirectTo(list)" [class.active]="i == 0" *ngFor="let list of randomRecipe | slice:0:5;let i = index">
+                <img class="d-block w-100 img-width" *ngIf="list.image" [src]="list.image" [alt]="list.title">
+                <img class="d-block w-100 img-width" *ngIf="!list.image" src="https://spoonacular.com/recipeImages/abd.jpg" [alt]="list.title">
                 <div class="carousel-caption recipe-title d-none d-md-block title-show">
-                        <div class="title">{{list.title}}</div>
+                    <div class="title">{{list.title}}</div>
                 </div>
+                <a class="carousel-control left" href="#myCarousel" data-slide="prev">&lsaquo;</a>
+                <a class="carousel-control right" href="#myCarousel" data-slide="next">&rsaquo;</a>
             </div>
         </div>
     </div>
 
 
     <!-- ALL foods display here -->
+    <div class="owl-carousel owl-theme food-options">
+        <div class="item" *ngFor="let list of foodTypeArray" (click)="redirectToShowFood(list)"> <span>{{list.label}}</span> </div>
+    </div>
 
     <div class="all-recipe-wrapper">
         <h2>Yummy Recipe Below!! Try today</h2>
         <div class="all-recipe-list-below" *ngIf="randomRecipe.length>0">
-                <div *ngFor = "let list of randomRecipe; let i = index" class="each-recipe-wrapper">
-                    <div class="title"  data-toggle="tooltip" data-placement="top" [title]="list.title">{{list.title  | limitTo : 25}}</div>
-                    <div class="summary-container">
+            <div *ngFor="let list of randomRecipe; let i = index" class="each-recipe-wrapper">
+                <div class="title" data-toggle="tooltip" data-placement="top" [title]="list.title">{{list.title | limitTo : 25}}</div>
+                <div class="summary-container">
                     <div class="summary" [innerHTML]="list.summary | limitTo : 200"></div>
                     <a class="read-more" (click)="readMorePageNavigate(list.id)">Read More</a>
-                    </div>
-                    <div class="image" *ngIf="list.image"><img [src]="list.image"></div>
-                    <div class="no-image" *ngIf="!list.image">{{list.title}}</div>
-                    <button type="button" class="btn btn-primary" (click)="redirectTo(list.id)">Get Dish Recipe</button>       
                 </div>
+                <div class="image" *ngIf="list.image"><img [src]="list.image"></div>
+                <div class="image" *ngIf="!list.image"><img src="https://spoonacular.com/recipeImages/abd.jpg" [alt]="list.title"></div>
+                <button type="button" class="btn primary-color btn-color" (click)="readMorePageNavigate(list.id)">Get Dish Recipe</button>
+            </div>
         </div>
     </div>
     <div class="d-flex justify-content-center" *ngIf="randomRecipe.length<=0">
         <div class="spinner-border" role="status">
-          <span class="sr-only">Loading...</span>
+            <span class="sr-only">Loading...</span>
         </div>
     </div>
 </div>

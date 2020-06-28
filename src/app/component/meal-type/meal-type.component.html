@@ -1,0 +1,16 @@
+<div class="food-with-nutrition-wrapper">
+    <h2>List of {{value}}</h2>
+    <div class="all-recipe-list-below" *ngIf="recipeList.length>0">
+        <div *ngFor="let list of recipeList; let i = index" class="each-recipe-wrapper">
+            <div class="title" data-toggle="tooltip" data-placement="top" [title]="list.title">{{list.title | limitTo : 25}}</div>
+            <div class="image" *ngIf="list.image"><img [src]="list.image"></div>
+            <div class="image" *ngIf="!list.image"><img src="https://spoonacular.com/recipeImages/abd.jpg" [alt]="list.title | limitTo : 25"></div>         
+            <button class="btn primary-color btn-color get-full-recipe-btn"  (click)="getRecipe(list)" target="_blank">Get Recipe Info</button>
+        </div>
+    </div>
+    <div class="d-flex justify-content-center spinner-container" *ngIf="recipeList.length<=0">
+        <div class="spinner-border" role="status">
+            <span class="sr-only">Loading...</span>
+        </div>
+    </div>
+</div>

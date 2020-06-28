@@ -1,0 +1,32 @@
+<div class="random-recipe-container container">
+  <div class="item-wrapper">
+    <ng-container *ngIf="recipeData">
+      <div class="title">{{recipeData.title}}</div>
+      <div class="img-container"><img class="d-block w-100" [src]="recipeData.image" alt="First slide"></div>
+      <div class="ingredients">
+        <div class="header">Ingredients</div>
+        <ng-container *ngIf="recipeData.extendedIngredients && recipeData.extendedIngredients.length>0">
+          <div class="item" *ngFor="let each of recipeData.extendedIngredients; let j = index">
+            <span class="index">{{j+1}}.</span>
+            <span class="ingredients-list">{{each.originalString}}</span>
+          </div>
+        </ng-container>
+        <div class="instruction">
+          <div class="header">Directions</div>
+          <ng-container *ngIf="recipeData.analyzedInstructions && recipeData.analyzedInstructions.length>0">
+            <div class="item" *ngFor="let each of recipeData.analyzedInstructions[0].steps">
+              <span class="index">Step {{each.number}}:</span>
+              <span class="ingredients-list">{{each.step}}</span>
+            </div>
+          </ng-container>
+        </div>
+      </div>
+      <div class="know-more"><a [href]="recipeData.sourceUrl" target="_blank">Know More About This Food</a></div>
+    </ng-container>
+    <div class="d-flex justify-content-center" *ngIf="!recipeData">
+      <div class="spinner-border" role="status">
+        <span class="sr-only">Loading...</span>
+      </div>
+    </div>
+  </div>
+</div>

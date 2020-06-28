@@ -4,7 +4,6 @@ import { Router } from '@angular/router';
 import { Store } from '@ngrx/store';
 import { KeywordInterface } from "src/app/interface/keyword.interface";
 import * as readMoreRef from '../../store/action/read-more.action'
-import { KeywordService } from "src/app/service/keyword.service";
 import { Subscription } from "rxjs";
 
 @Component({
@@ -22,7 +21,7 @@ export class RecipeListComponent implements OnInit {
     private _cookingService: CookingService,
     private _route: Router,
     private _store: Store<any>,
-    private _keywordService:KeywordService) { }
+    ) { }
 
   ngOnInit() {
    this.subscribedKeyword = this._store.select('keywordReducer').subscribe(res=>{

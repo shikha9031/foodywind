@@ -16,9 +16,6 @@ import { randomFoodReducer } from './store/reducer/random.reducer';
 import { readMoreReducer } from './store/reducer/read-more.reducer';
 import { nutritionFoodReducer } from './store/reducer/nutrition-food.reducer';
 
-/** import service */
-import { KeywordService } from './service/keyword.service';
-
 import { RecipeListComponent } from './component/recipe-list/recipe-list.component';
 import { HeaderComponent } from './component/header/header.component';
 import { FooterComponent } from './component/footer/footer.component';
@@ -27,16 +24,18 @@ import { HomeComponent } from './component/home/home.component';
 import { RandomRecipeComponent } from './component/random-recipe/random-recipe.component';
 import { PrivacyPolicyComponent } from './component/privacy-policy/privacy-policy.component';
 import { SafeUrlPipe } from './pipe/safe-url.pipe';
-import { FoodWithNutritionComponent } from './component/food-with-nutrition/food-with-nutrition.component';
+import { MealTypeComponent } from './component/meal-type/meal-type.component';
 import { NutritionInfoComponent } from './component/nutrition-info/nutrition-info.component';
 import { SideNavFilterComponent } from './component/side-nav-filter/side-nav-filter.component';
-import { RecipeInfoComponent } from './component/recipe-info/recipe-info.component';
+import { RecipeIframeComponent } from './component/recipe-iframe/recipe-iframe.component';
+import { ReadMoreComponent } from './component/read-more/read-more.component';
+import { AnalysedInstructionsComponent } from './component/analysed-instructions/analysed-instructions.component';
 
 let reducer = {
   keywordReducer:keywordReducer,
   randomFoodReducer:randomFoodReducer,
   readMoreReducer:readMoreReducer,
-  nutritionFoodReducer:nutritionFoodReducer
+  nutritionFoodReducer:nutritionFoodReducer,
 };
 
 @NgModule({
@@ -50,10 +49,12 @@ let reducer = {
     RandomRecipeComponent,
     PrivacyPolicyComponent,
     SafeUrlPipe,
-    FoodWithNutritionComponent,
+    MealTypeComponent,
     NutritionInfoComponent,
     SideNavFilterComponent,
-    RecipeInfoComponent,
+    RecipeIframeComponent,
+    ReadMoreComponent,
+    AnalysedInstructionsComponent,
   ],
   imports: [
     BrowserModule,
@@ -65,7 +66,7 @@ let reducer = {
     OwlModule,
     StoreModule.forRoot(reducer),
   ],
-  providers: [KeywordService],
+  providers: [],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

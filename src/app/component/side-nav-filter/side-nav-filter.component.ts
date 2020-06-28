@@ -6,6 +6,8 @@ import cuisionJson  from  '../../json-data/cuision.json';
 import mealTypeJson from '../../json-data/meal-type.json';
 import nutritionCodeJson  from '../../json-data/nutrition-code.json';
 
+declare var config:any;
+
 @Component({
   selector: 'side-nav-filter',
   templateUrl: './side-nav-filter.component.html',
@@ -18,7 +20,8 @@ export class SideNavFilterComponent implements OnInit {
   healthData: any;
   dishTypeData: any;
   dietData: any;
-
+  config:any;
+  
   openDietData:boolean = false;
   openhealthData:boolean = false;
   openCuisineData:boolean = false;

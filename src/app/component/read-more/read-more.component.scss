@@ -13,6 +13,7 @@
             text-align: center;
             margin-bottom: 40px;
             line-height: 55px;
+            word-break: break-word;
         }
         .summary{
             color: #697b96;
@@ -51,18 +52,14 @@
                     font-weight: 600;
                 }
             }
-            
+            .desc{
+                font-size: 20px;
+                line-height: 30px;
+            }
         }
         .know-more{
             font-size: 16px;
         }
     }
     
-}
-.next{
-    background-color: #3da4ab;
-    padding: 15px 20px;
-    color: white;
-    float: right;
-    cursor: pointer;
 }

@@ -1,5 +1,5 @@
 {
-  "name": "Foodywind",
+  "name": "foodywind",
   "version": "0.0.0",
   "scripts": {
     "ng": "ng",
@@ -26,10 +26,12 @@
     "ngx-owl-carousel": "^2.0.7",
     "ngx-perfect-scrollbar": "^7.1.0",
     "node-sass": "^4.11.0",
+    "owl.carousel": "^2.3.4",
     "rxjs": "~6.3.3",
     "rxjs-compat": "^6.3.3",
     "tslib": "^1.9.0",
-    "zone.js": "~0.8.26"
+    "zone.js": "~0.8.26",
+    "@ngrx/store": "^4.1.1"
   },
   "devDependencies": {
     "@angular-devkit/build-angular": "~0.11.0",

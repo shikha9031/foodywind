@@ -38,6 +38,7 @@
                 letter-spacing: normal;
                 font-size: 30px;
                 font-weight: 600;
+                word-break: break-word;
             }
             .summary-container{
                 margin-bottom: 2rem;                    
@@ -47,7 +48,7 @@
                     line-height: 36px;
                 }
                 .read-more{
-                    color: #007bff;
+                    color: #3da4ab;
                     text-decoration: underline;
                     cursor: pointer;
                 }

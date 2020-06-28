@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { KeywordService } from '../../service/keyword.service';
 import * as keywordRef from '../../store/action/keyword.action';
 import { Store } from "@ngrx/store";
 import { KeywordInterface } from "../../interface/keyword.interface";
@@ -27,7 +26,6 @@ export class HeaderComponent implements OnInit {
 
   constructor(
     private _route:Router,
-    private _keywordService:KeywordService, 
     private _store:Store<any>,
     private _cookingService:CookingService,
     private cd:ChangeDetectorRef) { }

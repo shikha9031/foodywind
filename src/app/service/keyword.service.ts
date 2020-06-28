@@ -5,7 +5,7 @@ import { BehaviorSubject } from 'rxjs';
   providedIn: 'root'
 })
 
-export class KeywordService {
+export class g  {
   searchKeyword = new BehaviorSubject('');
   
   constructor() { }
