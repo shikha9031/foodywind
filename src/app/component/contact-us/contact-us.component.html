@@ -1,0 +1,28 @@
+<div class="container contact-us-wrapper thank-you-wrapper" *ngIf="thankYouFlag">
+  <b class="thank-you-note">Thank you for getting in touch!</b>
+  <div class="desc">We appreciate you contacting us. One of our colleagues will get back in touch with you soon!</div>
+  <div class="great-day">Have a great day!</div>
+</div>
+
+<div class="container contact-us-wrapper" *ngIf="!thankYouFlag">
+  <form (ngSubmit)="submitForm()" #f1="ngForm">
+    <div class="border-primary contact-body">
+      <div class="header">Contact us</div>
+      <!--Body -->
+      <div class="row mb-3">
+        <div class="col-sm-6">
+          <div class="col-sm-12">
+            <input type="text" placeholder="name" class="input-box" name="name" [(ngModel)]="contactusObj.name" required>
+          </div>
+          <div class="col-sm-12">
+            <input type="text" placeholder="email" class="input-box" name="email" [(ngModel)]="contactusObj.email"  minlength="5" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" required>
+          </div>
+        </div>
+        <div class="col-sm-6">
+          <textarea rows="8" class="input-box" name="message" [(ngModel)]="contactusObj.message" required></textarea>
+        </div>
+      </div>
+      <div><button class="btn primary-color btn-color" [disabled]="!f1.valid">Submit</button></div>
+    </div>
+  </form>
+</div>

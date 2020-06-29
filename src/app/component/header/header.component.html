@@ -22,31 +22,14 @@
     <ul class="navbar-nav mt-2 mt-lg-0">
       <li class="nav-item" [class.active]="currentUrl === '/home'">
         <a class="nav-link" routerLink="home">Home</a>
-        <!-- <span class="sr-only">(current)</span>-->
+      </li>
+    </ul>
+    <ul class="navbar-nav mt-2 mt-lg-0">
+      <li class="nav-item" [class.active]="currentUrl === '/contact-us'">
+        <a class="nav-link" routerLink="contact-us">Contact us</a>
       </li>
     </ul>
     <form class="form-inline my-2 my-lg-0 search-box" #searchForm="ngForm" (ngSubmit)="submitSearchKeyword()">
-      <!-- <div class="dropdown">
-        <button type="button" class="btn btn-primary dropdown-toggle btn-color" data-toggle="dropdown">
-          {{searchType | limitTo : 10}}
-        </button>
-        <div class="dropdown-menu">
-          <div class="dropdown-item" (click)="searchType = 'Recipe search with ingredients';suggestion ='Suggestion: onion,potato'; keyword = '' ">
-            <div class="form-check">
-              <label class="form-check-label" for="radio1">
-                  <input type="radio" class="form-check-input" id="radio1" name="optradio" value="option1" checked>Recipe search with ingredients
-                </label>
-            </div>
-          </div>
-          <div class="dropdown-item" (click)="searchType = 'Food with nutrition';suggestion ='Suggestion: palak paneer'; keyword = ''">
-            <div class="form-check">
-              <label class="form-check-label" for="radio2">
-                  <input type="radio" class="form-check-input" id="radio2" name="optradio" value="option2">Food with nutrition
-                </label>
-            </div>
-          </div>
-        </div>
-      </div> -->
       <input class="form-control mr-sm-2 search-box-input" type="search" [(ngModel)]="keyword" name="keywords" required [placeholder]="suggestion"
         aria-label="Search" autocomplete="off">
       <button class="btn btn-outline-light search-btn my-2 my-sm-0" type="submit" [disabled]="!searchForm.valid">Search</button>

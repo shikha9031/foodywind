@@ -25,11 +25,11 @@ import { RandomRecipeComponent } from './component/random-recipe/random-recipe.c
 import { PrivacyPolicyComponent } from './component/privacy-policy/privacy-policy.component';
 import { SafeUrlPipe } from './pipe/safe-url.pipe';
 import { MealTypeComponent } from './component/meal-type/meal-type.component';
-import { NutritionInfoComponent } from './component/nutrition-info/nutrition-info.component';
 import { SideNavFilterComponent } from './component/side-nav-filter/side-nav-filter.component';
 import { RecipeIframeComponent } from './component/recipe-iframe/recipe-iframe.component';
 import { ReadMoreComponent } from './component/read-more/read-more.component';
 import { AnalysedInstructionsComponent } from './component/analysed-instructions/analysed-instructions.component';
+import { ContactUsComponent } from './component/contact-us/contact-us.component';
 
 let reducer = {
   keywordReducer:keywordReducer,
@@ -50,11 +50,11 @@ let reducer = {
     PrivacyPolicyComponent,
     SafeUrlPipe,
     MealTypeComponent,
-    NutritionInfoComponent,
     SideNavFilterComponent,
     RecipeIframeComponent,
     ReadMoreComponent,
     AnalysedInstructionsComponent,
+    ContactUsComponent,
   ],
   imports: [
     BrowserModule,
